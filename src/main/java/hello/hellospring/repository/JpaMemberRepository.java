@@ -32,6 +32,7 @@ public class JpaMemberRepository implements MemberRepository{
         return result.stream().findAny();
     }
 
+    /** jpql : 객체(Entity)를 대상으로 쿼리를 날리는 문법 **/
     @Override
     public List<Member> findAll() {
         return em.createQuery("select m from Member m", Member.class).getResultList();
